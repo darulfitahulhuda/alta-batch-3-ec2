@@ -36,6 +36,8 @@ func main() {
 	appMiddleware.AddGlobalMiddlewares(e)
 	appController.HandleRoutes(e, cfg.JwtSecret, personModel)
 
+	fmt.Println("testing")
+
 	if err = e.Start(fmt.Sprintf(":%d", cfg.HttpPort)); err != nil {
 		panic(err)
 	}
